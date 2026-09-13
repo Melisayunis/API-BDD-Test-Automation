@@ -15,7 +15,7 @@ Feature: Booking Management
     When the user retrieves the deleted booking
     Then the booking should not be found
 
-  @booking @patch
+  @booking
   Scenario: Partially update a booking
     Given the user has valid booking information
     When the user partially updates the booking first name
