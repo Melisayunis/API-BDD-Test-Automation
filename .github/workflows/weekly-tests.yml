@@ -40,7 +40,8 @@ jobs:
 
       - name: Run API BDD tests
         run: |
-          if [ "${{ github.event_name }}" = "schedule" ]; then
+          if [ "${{ github.event_name }}" = "push" ] || \
+             [ "${{ github.event_name }}" = "schedule" ]; then
             mvn test "-Dcucumber.filter.tags=not @known-defect"
             exit $?
           fi
